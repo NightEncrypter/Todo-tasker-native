@@ -27,6 +27,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import NoteScreen from './components/screens/NoteScreen';
+import Login from './components/screens/Login';
+import Register from './components/screens/Register';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -71,11 +73,21 @@ function App(): JSX.Element {
       // style={backgroundStyle}
     >
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             options={{headerShown: false}}
             name="Home"
             component={NoteScreen}
+          />
+          <Stack.Screen
+            options={{headerShown: false}}
+            name="Login"
+            component={Login}
+          />
+          <Stack.Screen
+            options={{headerShown: false}}
+            name="Register"
+            component={Register}
           />
         </Stack.Navigator>
       </NavigationContainer>

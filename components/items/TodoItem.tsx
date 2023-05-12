@@ -10,6 +10,7 @@ import {theme} from '../theme';
 import {Pressable} from 'react-native';
 import FIcons from '../misc/FIcons';
 import RoundedIButton from '../misc/RoundedIButton';
+import Icon from 'react-native-vector-icons/Feather';
 
 type Props = {
   onPress: () => void;
@@ -60,6 +61,7 @@ const TodoItem = ({item, onPress}: Props) => {
             justifyContent: 'flex-end',
           }}>
           <RoundedIButton
+            onPress={() => console.log('trash')}
             style={{
               backgroundColor: '#FF033E',
             }}
@@ -67,11 +69,26 @@ const TodoItem = ({item, onPress}: Props) => {
           />
 
           <RoundedIButton
+            onPress={() => console.log('edit-2')}
             style={{
               backgroundColor: 'green',
             }}
             name={'edit-2'}
           />
+          {/* <Icon.Button
+            name="trash"
+            size={10}
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+
+              backgroundColor: 'red',
+              borderRadius: 25,
+              width: 35,
+              height: 35,
+            }}
+          /> */}
         </View>
       </View>
       <Text style={styles.title} numberOfLines={1}>

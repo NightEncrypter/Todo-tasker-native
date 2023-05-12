@@ -36,7 +36,6 @@ const TodoInputModal = ({visible, onClose}: Props) => {
 
   const handleSubmit = () => {
     if (!text.desc.trim() && !text.title.trim()) {
-      console.log('hello');
       onClose();
       return;
     }
@@ -50,7 +49,16 @@ const TodoInputModal = ({visible, onClose}: Props) => {
     <>
       <StatusBar hidden />
       <Modal visible={visible} animationType="fade">
-        <View style={{paddingHorizontal: 20}}>
+        <View
+          style={{
+            paddingHorizontal: 20,
+            flexDirection: 'column',
+            flex: 1,
+            justifyContent: 'center',
+          }}>
+          <View style={styles.createTaskContainer}>
+            <Text style={styles.createTaskHeading}>Create a task</Text>
+          </View>
           <View style={styles.mainInput}>
             <TextInput
               onChangeText={text => handleText(text, 'title')}
@@ -106,6 +114,14 @@ const TodoInputModal = ({visible, onClose}: Props) => {
 };
 
 const styles = StyleSheet.create({
+  createTaskHeading: {
+    color: theme.primary[500],
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  createTaskContainer: {
+    marginBottom: 25,
+  },
   input: {
     flexGrow: 1,
     paddingHorizontal: 10,

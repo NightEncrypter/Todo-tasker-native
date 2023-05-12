@@ -127,6 +127,7 @@ const NoteScreen = ({navigation}: any) => {
             styles.addTodo,
           ]}
           // style={styles.addTodo}
+
           onPress={() => {
             console.log('pressed');
             setOpenModal(true);
